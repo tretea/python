@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册/登录</title>
+</head>
+<body>
+<div align="center"><a href="/adding/">注册</a>
+<a href="/loading/" >登录</a>
+</div>
+<div align="right">id_card:{{ id }} name:{{ name }}</div>
+<div >
+<table border="2">
+    <thead>
+    <tr>
+        <td>
+            id值
+        </td>
+        <td>
+            name
+        </td>
+        <td>
+            id_card
+        </td>
+        <td>
+            sex
+        </td>
+        <td>
+            password
+        </td>
+        <td colspan="2" align="center">
+            功能
+        </td>
+    </thead>
+    <tbody>
+    {% for list in content %}
+        <tr>
+        <td>
+            {{ list.id }}
+        </td>
+        <td>
+            {{ list.name }}
+        </td>
+         <td>
+            {{ list.id_card }}
+        </td>
+         <td>
+            {{ list.sex }}
+        </td>
+         <td>
+            {{ list.password }}
+        </td>
+        <td><a href="/delete/?id={{ list.id }}" >删除</a></td>
+        <td><a href="/change/?id={{ list.id }}" >修改</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div align="center">
+    <hr size="0.1">
+    <h1>评论</h1>
+    <form action="">
+        <br>
+        <table  cellspacing="0" border="0" width=50%>
+            {% for li in ret %}
+                <tr>
+                <td>
+                </td>
+                </tr>
+            <tr>
+                <td>{{li.content}}</td>
+                <td width="50"><a href="/sc/?id={{ li.id }}">删除</a></td>
+            </tr>
+			<tr>
+                <td><hr size="0.1" color=""></td>
+            </tr>
+                <tr>
+                <td><form action="/content/name={{ li.name }}&id={{ li.id }}"><input type="submit" value="提交"></form></td>
+                </tr>
+            {%endfor%}
+        </table>
+         <textarea name="content" id="" cols=100% rows="10"></textarea>
+        <br>
+        <br>
+    </form>
+</div>
+</body>
+</html>

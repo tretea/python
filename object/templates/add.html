@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+</head>
+<body>
+<div align="center" style="margin-top:150px ">
+    <form action="/add/" method="post" class="table">
+        <table>
+            <tr height="60px">
+                 <td>
+                    请输入用户名:
+                 </td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr height="60px">
+                <td colspan="2" align="center">
+                    <input type="radio" name="sex" value="man" id="man"><label for="man">男</label><input type="radio" name="sex" value="woman" id="woman"><label for="woman">女</label>
+                </td>
+            </tr>
+            <tr height="60px">
+                <td>
+                   请输入学号:
+                </td>
+                <td>
+                    <input type="text" name="id">
+                </td>
+            </tr>
+            <tr height="60px">
+                 <td>
+                    请输入密码:
+                 </td>
+                <td>
+                    <input type="password" name="pwd">
+                </td>
+            </tr>
+            <tr height="60px">
+                <td colspan="2" align="center">
+                <input type="submit" value="注册"><br/>
+                    <a href="/loading/"><font color="blue">已有帐号直接登录</font></a>
+                </td>
+            </tr>
+            <tr height="60px">
+                 <td colspan="2" align="center">
+                    <p>{{ error }}</p>
+                </td>
+            </tr>
+    </table>
+    </form>
+</div>
+</body>
+</html>
