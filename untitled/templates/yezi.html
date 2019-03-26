@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册/登录</title>
+	<style>
+	#content{width:500px;}
+	</style>
+</head>
+<body>
+<div align="center"><a href="/register">注册</a>
+<a href="/login" >登录</a>
+</div>
+<div align="right">name:{{ name }}</div>
+<div >
+<table border="2">
+    <thead>
+    <tr>
+        <td>
+            name
+        </td>
+		<td>
+            sex
+        </td>
+		<td>
+            phone
+        </td>
+        <td>
+            password
+        </td>
+        <td colspan="2" align="center">
+            操作
+        </td>
+    </thead>
+    <tbody>
+    {% for list in user %}
+        <tr>
+        <td>
+            {{ list[0] }}
+        </td>
+         <td>
+            {{ list[2] }}
+        </td>
+		 <td>
+            {{ list[3] }}
+        </td>
+		<td>
+            {{ list[1] }}
+        </td>
+        <td><a href="/delete_user?d_name={{list[0]}}&name={{list[0]}}" >删除</a></td>
+        <td><a href="/change?name={{list[0]}}" >修改</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+<div align="center">
+    <hr size="0.1">
+    <h1>评论</h1>
+
+        <br>
+	{%for list in z_content%}
+	<div id='content'>
+	<hr>
+	<p align='left'>{{list[0]}}</p>
+	<p align='left'>{{list[1]}} </p><a align='right' href='/delete?content={{list[1]}}'>删除</a>
+	<p align='right'>{{list[2]}}</p>
+	</div>
+	{% endfor %}
+		<form action='/content?name={{name}}' method='post'>
+         <textarea name="content" id="" cols=100% rows="10"></textarea></br></br>
+		
+		 <input type='submit' value='提交'>
+        <br>
+        <br>
+		</form>
+</div>
+</body>
+</html>

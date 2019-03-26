@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>change</title>
+</head>
+<body>
+			<form action="/changing?name={{name}}" method="post" class="table">
+        <table align=center>
+            <tr height="60px">
+                 <td>
+                    用户名:
+                 </td>
+                <td>
+					<p>{{name}}</p>
+                </td>
+            </tr>
+            <tr height="60px">
+                 <td>
+                    请输入密码:
+                 </td>
+                <td>
+                    <input type="password" name="pwd" value={{password}}>
+                </td>
+                <tr height="60px">
+                 <td>
+                    请输入手机号:
+                 </td>
+                <td>
+                    <input type="text" name="phone" value={{phone}}>
+                </td>
+            </tr>
+            <tr height="60px">
+                <td colspan="2" align="center">
+					<select name="sex">
+					<option {{woman}}>女</option>
+					<option {{man}}>男</option>
+					</select>
+				</td>
+            </tr>
+            </tr>
+                <tr height="60px">
+                <td colspan="2" align="center">
+                <input type="submit" value="修改">
+                </td>
+                </tr>
+            <tr>
+                <td>{{ error }}</td>
+            </tr>
+                </table>
+				</form>
+</body>
+</html>

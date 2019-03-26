@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+</head>
+<body>
+<div align="center" style="margin-top:150px ">
+    <form action="/dl" method="post" class="table">
+        <table>
+            <tr height="60px">
+                 <td>
+                    请输入用户名/手机号:
+                 </td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr height="60px">
+                 <td>
+                    请输入密码:
+                 </td>
+                <td>
+                    <input type="password" name="pwd">
+                </td>
+            </tr>
+            <tr height="60px">
+                <td colspan="2" align="center">
+                <input type="submit" value="登录"><br/>
+                    <a href="/register"><font color="blue">没有账号先注册</font></a>
+                </td>
+            </tr>
+            <tr height="60px">
+                 <td colspan="2" align="center">
+                    <p>{{ error }}</p>
+                </td>
+            </tr>
+    </table>
+    </form>
+</div>
+</body>
+</html>
